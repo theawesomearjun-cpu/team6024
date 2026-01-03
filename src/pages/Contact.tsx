@@ -1,36 +1,35 @@
 import { Layout } from "@/components/Layout";
-import { Mail, MapPin, Instagram, Youtube, Linkedin, Twitter, Send, Clock } from "lucide-react";
+import { Mail, MapPin, Instagram, Youtube, Linkedin, Send, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 const contactInfo = [
   {
     icon: Mail,
-    title: "Email Us",
+    title: "Team Email",
     description: "For general inquiries and partnership opportunities",
     value: "team@rfactor6024.com",
     href: "mailto:team@rfactor6024.com",
   },
   {
+    icon: User,
+    title: "Lead Mentor",
+    description: "Nilesh - Lead Mentor",
+    value: "nilesh@mindfactory.in",
+    href: "mailto:nilesh@mindfactory.in",
+  },
+  {
     icon: MapPin,
     title: "Location",
     description: "Based in India, inspiring globally",
-    value: "India",
-    href: null,
-  },
-  {
-    icon: Clock,
-    title: "Response Time",
-    description: "We typically respond within",
-    value: "24-48 hours",
+    value: "Andheri East, Mumbai, India",
     href: null,
   },
 ];
 
 const socialLinks = [
-  { icon: Instagram, name: "Instagram", handle: "@rfactor6024", href: "#" },
+  { icon: Instagram, name: "Instagram", handle: "@team6024", href: "https://instagram.com/team6024" },
   { icon: Youtube, name: "YouTube", handle: "R-Factor 6024", href: "#" },
-  { icon: Twitter, name: "Twitter", handle: "@rfactor6024", href: "#" },
   { icon: Linkedin, name: "LinkedIn", handle: "R-Factor", href: "#" },
 ];
 
@@ -57,11 +56,19 @@ const Contact = () => {
             <p className="font-orbitron text-primary uppercase tracking-[0.2em] text-sm mb-4 animate-fade-in-up">
               Contact
             </p>
-            <h1 className="font-orbitron font-bold text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 animate-fade-in-up" style={{ animationDelay: "100ms" }}>
+            <h1
+              className="font-orbitron font-bold text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 animate-fade-in-up"
+              style={{ animationDelay: "100ms" }}
+            >
               Let's <span className="text-gradient">Connect</span>
             </h1>
-            <p className="text-xl text-muted-foreground animate-fade-in-up" style={{ animationDelay: "200ms" }}>
-              Whether you want to join our team, partner with us, or need guidance starting your own robotics program - we'd love to hear from you.
+            <p
+              className="text-xl text-muted-foreground animate-fade-in-up"
+              style={{ animationDelay: "200ms" }}
+            >
+              Whether you want to join our team, partner with us, or need
+              guidance starting your own robotics program - we'd love to hear
+              from you.
             </p>
           </div>
         </div>
@@ -72,7 +79,7 @@ const Contact = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {contactInfo.map((info, index) => (
-              <div 
+              <div
                 key={info.title}
                 className="p-6 rounded-xl bg-card border border-border text-center group hover:border-primary/50 transition-all animate-fade-in-up"
                 style={{ animationDelay: `${index * 100}ms` }}
@@ -87,11 +94,14 @@ const Contact = () => {
                   {info.description}
                 </p>
                 {info.href ? (
-                  <a href={info.href} className="text-primary font-medium hover:text-primary/80 transition-colors">
+                  <a
+                    href={info.href}
+                    className="text-primary font-medium hover:text-primary/80 transition-colors text-sm break-all"
+                  >
                     {info.value}
                   </a>
                 ) : (
-                  <p className="text-primary font-medium">{info.value}</p>
+                  <p className="text-primary font-medium text-sm">{info.value}</p>
                 )}
               </div>
             ))}
@@ -111,22 +121,30 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm text-muted-foreground mb-2">Your Name</label>
+                    <label className="block text-sm text-muted-foreground mb-2">
+                      Your Name
+                    </label>
                     <input
                       type="text"
                       value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
                       className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground"
                       placeholder="John Doe"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-sm text-muted-foreground mb-2">Your Email</label>
+                    <label className="block text-sm text-muted-foreground mb-2">
+                      Your Email
+                    </label>
                     <input
                       type="email"
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
                       className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground"
                       placeholder="john@example.com"
                       required
@@ -134,10 +152,14 @@ const Contact = () => {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm text-muted-foreground mb-2">Subject</label>
+                  <label className="block text-sm text-muted-foreground mb-2">
+                    Subject
+                  </label>
                   <select
                     value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, subject: e.target.value })
+                    }
                     className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground"
                     required
                   >
@@ -151,10 +173,14 @@ const Contact = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm text-muted-foreground mb-2">Message</label>
+                  <label className="block text-sm text-muted-foreground mb-2">
+                    Message
+                  </label>
                   <textarea
                     value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
                     rows={5}
                     className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground resize-none"
                     placeholder="Tell us what you're looking for..."
@@ -169,14 +195,18 @@ const Contact = () => {
             </div>
 
             {/* Social Links & Info */}
-            <div className="animate-fade-in-up" style={{ animationDelay: "200ms" }}>
+            <div
+              className="animate-fade-in-up"
+              style={{ animationDelay: "200ms" }}
+            >
               <h2 className="font-orbitron font-bold text-2xl text-foreground mb-6">
                 Follow Us
               </h2>
               <p className="text-muted-foreground mb-8">
-                Stay updated with our latest projects, competitions, and outreach activities by following us on social media.
+                Stay updated with our latest projects, competitions, and
+                outreach activities by following us on social media.
               </p>
-              <div className="grid grid-cols-2 gap-4 mb-12">
+              <div className="grid gap-4 mb-12">
                 {socialLinks.map((social) => (
                   <a
                     key={social.name}
@@ -189,8 +219,12 @@ const Contact = () => {
                       <social.icon className="text-primary" size={20} />
                     </div>
                     <div>
-                      <p className="font-medium text-foreground">{social.name}</p>
-                      <p className="text-sm text-muted-foreground">{social.handle}</p>
+                      <p className="font-medium text-foreground">
+                        {social.name}
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        {social.handle}
+                      </p>
                     </div>
                   </a>
                 ))}
@@ -202,10 +236,14 @@ const Contact = () => {
                   Looking to Start a Team?
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  We offer free mentorship for new FIRST teams in India. Whether you're starting an FLL, FTC, or FRC team, we can guide you through the entire process - from registration to your first competition.
+                  We offer free mentorship for new FIRST and VEX teams in India.
+                  Whether you're starting an FLL, FTC, FRC, or VEX team, we can
+                  guide you through the entire process - from registration to
+                  your first competition.
                 </p>
                 <p className="text-primary font-medium text-sm">
-                  Select "Team Mentorship" in the form and tell us about your school or organization!
+                  Select "Team Mentorship" in the form and tell us about your
+                  school or organization!
                 </p>
               </div>
             </div>
