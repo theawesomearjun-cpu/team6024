@@ -64,17 +64,22 @@ const departments = [
   },
   {
     icon: Code,
-    name: "Programming",
+    name: "Electricals",
     description: "Code the robot's autonomous and teleop functionality.",
   },
   {
     icon: Megaphone,
-    name: "Business & Outreach",
+    name: "Programming",
+    description: "Handle sponsorships, marketing, and community initiatives.",
+  },
+  {
+    icon: Megaphone,
+    name: "CAD",
     description: "Handle sponsorships, marketing, and community initiatives.",
   },
   {
     icon: Camera,
-    name: "Media & Documentation",
+    name: "Outreach",
     description: "Capture and share our journey through photos, videos, and content.",
   },
 ];
