@@ -105,7 +105,7 @@ export const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-muted-foreground text-sm">
                 <MapPin size={18} className="text-primary shrink-0 mt-0.5" />
-                <span>India</span>
+                <span>Mumbai, India</span>
               </li>
               <li className="flex items-start gap-3 text-muted-foreground text-sm">
                 <Mail size={18} className="text-primary shrink-0 mt-0.5" />
@@ -121,11 +121,6 @@ export const Footer = () => {
         <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-muted-foreground text-sm">
             © {new Date().getFullYear()} R-Factor FRC Team 6024. All rights reserved.
-          </p>
-          <p className="text-muted-foreground text-sm flex items-center gap-2">
-            <span className="text-primary">★</span>
-            India's First FRC Team
-            <span className="text-primary">★</span>
           </p>
         </div>
       </div>
